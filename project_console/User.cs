@@ -10,16 +10,16 @@ namespace project_console
     {
         string Name { get; set; }
         string Username { get; set; }
-        int Id { get; set; }
+        string Id { get; set; }
         bool SignIn(string username, string password);
     }
 
-    class User : IUser
+    public class User : IUser
     {
         public string Name { get; set; }
         public string Username { get; set; }
         private string Password { get; set; }
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public User(string name, string username, string password)
         {

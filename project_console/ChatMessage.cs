@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace project_console
 {
-    class ChatMessage
+    public class ChatMessage
     {
-        public string id;
-        public string senderId;
-        public string receiverId;
-        public string message;
-        public DateTime timestamp;
+        public string Id;
+        public string ChatId;
+        public string SenderId;
+        public string Message;
+        public DateTime Timestamp;
 
-        public ChatMessage(string senderId, string receiverId, string message)
+        public ChatMessage(string senderId, string message, string chatId)
         {
-            this.senderId = senderId;
-            this.receiverId = receiverId;
-            this.message = message;
-            this.timestamp = DateTime.Now;
+            this.SenderId = senderId;
+            this.Message = message;
+            this.Timestamp = DateTime.Now;
+            this.ChatId = chatId;
         }
     }
 }

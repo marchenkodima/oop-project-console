@@ -6,28 +6,27 @@ using System.Threading.Tasks;
 
 namespace project_console
 {
-    class Chat
+    public class SupportChat
     {
-        public string id;
-        public string studentId;
-        public string administratorId;
-        private ChatMessage[] messages;
+        public string Id;
+        public string StudentId;
+        public string AdministratorId;
 
-        public Chat()
+        public SupportChat(string studentId, string administratorId)
         {
         }
 
-        public void SendMessage(string senderId, string receiverId, string message)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteMessage(int index)
+        public void SendMessage(string senderId, string message)
         {
             throw new NotImplementedException();
         }
 
-        public ChatMessage[] GetMessages()
+        public void DeleteMessage(string messageId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ChatMessage> GetMessages()
         {
             throw new NotImplementedException();
         }

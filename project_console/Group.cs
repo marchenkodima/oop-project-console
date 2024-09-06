@@ -6,23 +6,28 @@ using System.Threading.Tasks;
 
 namespace project_console
 {
-    class Group
+    public class Group
     {
         public string id;
-        public string[] studentIds;
 
         public Group(string groupName)
         {
             id = groupName;
         }
 
-        public void AddStudent(string studentId)
+        public void AttachStudent(string studentId)
         {
             // Code to add a student to the group
             throw new NotImplementedException();
         }
 
-        public void RemoveStudent(string studentId)
+        public void DetachStudent(string studentId)
+        {
+            // Code to remove a student from the group
+            throw new NotImplementedException();
+        }
+
+        public List<Student> GetStudents()
         {
             // Code to remove a student from the group
             throw new NotImplementedException();

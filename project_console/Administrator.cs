@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace project_console
 {
-    class Administrator : User
+    public class Administrator : User
     {
         public string[] chatIds;
 
@@ -14,13 +14,19 @@ namespace project_console
         {
         }
 
-        public void CreateUser(string name, string username, string password)
+        public void AddStudent(Student student)
         {
             // Code to create a new user
             throw new NotImplementedException();
         }
 
-        public void DeleteUser(string username)
+        public void AddAdministrator(Administrator admin)
+        {
+            // Code to create a new user
+            throw new NotImplementedException();
+        }
+
+        public User DeleteUser(string username)
         {
             // Code to delete a user
             throw new NotImplementedException();
@@ -38,7 +44,7 @@ namespace project_console
             throw new NotImplementedException();
         }
 
-        public void CreateGroup(string[] studentIds)
+        public void AddGroup(Group group)
         {
             // Code to create a new group
             throw new NotImplementedException();
