@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using project_console;
+using System;
+
+namespace ProjectConsole
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        }
+    }
+}
