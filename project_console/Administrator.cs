@@ -12,6 +12,7 @@ namespace project_console
 
         public Administrator(string name, string username, string password) : base(name, username, password)
         {
+            throw new NotImplementedException();
         }
 
         public void AddStudent(Student student)

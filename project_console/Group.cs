@@ -13,6 +13,7 @@ namespace project_console
         public Group(string groupName)
         {
             id = groupName;
+            throw new NotImplementedException();
         }
 
         public void AttachStudent(string studentId)

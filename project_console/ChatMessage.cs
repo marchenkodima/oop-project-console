@@ -20,6 +20,7 @@ namespace project_console
             this.Message = message;
             this.Timestamp = DateTime.Now;
             this.ChatId = chatId;
+            throw new NotImplementedException();
         }
     }
 }

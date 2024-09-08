@@ -14,6 +14,7 @@ namespace project_console
 
         public SupportChat(string studentId, string administratorId)
         {
+            throw new NotImplementedException();
         }
 
         public void SendMessage(string senderId, string message)
