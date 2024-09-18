@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace project_console
 {
-    public class ChatMessage
+    public class Teacher : User
     {
-        public string SenderId;
-        public string Message;
-        public DateTime Timestamp;
+        public List<Course> Courses;
 
-        public ChatMessage(string senderId, string message)
+        public Teacher(string name, string username, string password) : base(name, username, password)
         {
             throw new NotImplementedException();
         }
