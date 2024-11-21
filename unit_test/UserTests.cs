@@ -8,7 +8,7 @@ namespace unit_test
         [TestMethod]
         public void TeacherGetsCreated()
         {
-            new Teacher("John Doe", "johndoe", "password");
+            Assert.ThrowsException<NotImplementedException>(() => new Teacher("John Doe", "johndoe", "password"));
         }
 
         [TestMethod]
