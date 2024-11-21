@@ -17,7 +17,7 @@ namespace project_console
         void AddChat(Chat chat);
     }
 
-    public class User : IUser
+    public class User : IUser, ICloneable
     {
         public string Name { get; set; }
         public string Username { get; set; }
@@ -40,6 +40,11 @@ namespace project_console
         public void AddChat(Chat chat)
         {
             throw new NotImplementedException();
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

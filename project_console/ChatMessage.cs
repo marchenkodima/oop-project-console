@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace project_console
 {
-    public class ChatMessage
+    public abstract class ChatMessage
     {
         public string SenderId;
-        public string Message;
-        public DateTime Timestamp;
+        public abstract DateTime Timestamp { get; set; }
 
-        public ChatMessage(string senderId, string message)
+        public ChatMessage(string senderId)
         {
             throw new NotImplementedException();
         }
+
+        public abstract string Serialize();
+        public abstract int GetSize();
     }
 }
