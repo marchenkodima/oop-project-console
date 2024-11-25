@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_console
+namespace ClassLibrary1
 {
     interface IUser
     {

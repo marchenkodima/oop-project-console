@@ -1,4 +1,4 @@
-using project_console;
+using ClassLibrary1;
 
 namespace unit_test
 {

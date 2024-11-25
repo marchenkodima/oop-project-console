@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_console
+namespace ClassLibrary1
 {
-    public class Teacher : User
+    public class Student : User
     {
+        public int Year;
+        public string Faculty;
         public List<Course> Courses;
 
-        public Teacher(string name, string username, string password) : base(name, username, password)
+        public Student(string name, string username, string password) : base(name, username, password)
         {
             Courses = new List<Course>();
         }

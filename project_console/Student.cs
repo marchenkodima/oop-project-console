@@ -14,12 +14,7 @@ namespace project_console
 
         public Student(string name, string username, string password) : base(name, username, password)
         {
-            throw new NotImplementedException();
-        }
-
-        public Chat ContactSupport()
-        {
-            throw new NotImplementedException();
+            Courses = new List<Course>();
         }
     }
 }
