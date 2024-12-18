@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
+    public delegate void MessageSentHandler(ChatMessage message);
+
     public class Chat : INotifyPropertyChanged
     {
         public string Name { get; set; }
+
+        public event MessageSentHandler MessageSent;
 
         private ObservableCollection<ChatMessage> _messages;
         public ObservableCollection<ChatMessage> Messages
@@ -35,6 +39,7 @@ namespace ClassLibrary1
         public void SendMessage(ChatMessage message)
         {
             Messages.Add(message);
+            MessageSent?.Invoke(message);
         }
 
         public void DeleteMessage(ChatMessage message)
