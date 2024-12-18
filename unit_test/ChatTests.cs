@@ -1,4 +1,5 @@
 using ClassLibrary1;
+using System.Collections.ObjectModel;
 
 namespace unit_test
 {
@@ -29,7 +30,7 @@ namespace unit_test
             Chat chat = new Chat("chat 1");
             chat.SendMessage(new TextChatMessage(student.Id, "Hello"));
             chat.SendMessage(new TextChatMessage(teacher.Id, "Hi"));
-            List<ChatMessage> messages = chat.GetMessages();
+            ObservableCollection<ChatMessage> messages = chat.Messages;
             Assert.AreEqual(2, messages.Count);
         }
 
@@ -42,11 +43,11 @@ namespace unit_test
             chat.SendMessage(new TextChatMessage(student.Id, "Hello"));
             chat.SendMessage(new TextChatMessage(teacher.Id, "Hi"));
 
-            List<ChatMessage> messages1 = chat.GetMessages();
+            ObservableCollection<ChatMessage> messages1 = chat.Messages;
             chat.DeleteMessage(messages1[0]);
             chat.DeleteMessage(messages1[0]);
 
-            List<ChatMessage> messages2 = chat.GetMessages();
+            ObservableCollection<ChatMessage> messages2 = chat.Messages;
             Assert.AreEqual(0, messages2.Count);
         }
     }

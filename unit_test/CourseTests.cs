@@ -15,7 +15,7 @@ namespace unit_test
         public void CanCreateTask()
         {
             Course course = new Course("course1");
-            course.CreateTask("task1");
+            course.CreateTask("task1", "answer1", "fac1");
         }
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace unit_test
         public void CanGetTask()
         {
             Course course = new Course("course1");
-            course.CreateTask("task1");
+            course.CreateTask("task1", "answer1", "fac1");
             string task = course.GetTask();
             Assert.AreEqual("task1", task);
         }
