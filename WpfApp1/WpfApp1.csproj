@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,7 +58,54 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Model\CourseRepository.cs" />
+    <Compile Include="Model\ChatRepository.cs" />
+    <Compile Include="Model\UserRepository.cs" />
+    <Compile Include="Services\CourseService.cs" />
+    <Compile Include="Services\ChatService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="ViewModel\CourseManagerViewModel.cs" />
+    <Compile Include="ViewModel\TeacherPortalViewModel.cs" />
+    <Compile Include="ViewModel\StudentPortalViewModel.cs" />
+    <Compile Include="ViewModel\AddTeacherViewModel.cs" />
+    <Compile Include="ViewModel\AddStudentViewModel.cs" />
+    <Compile Include="ViewModel\ChatManagerViewModel.cs" />
+    <Compile Include="ViewModel\UserManagerViewModel.cs" />
+    <Compile Include="View\AddStudent.xaml.cs">
+      <DependentUpon>AddStudent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddTeacher.xaml.cs">
+      <DependentUpon>AddTeacher.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CourseManager.xaml.cs">
+      <DependentUpon>CourseManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChatManager.xaml.cs">
+      <DependentUpon>ChatManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TeacherPortal.xaml.cs">
+      <DependentUpon>TeacherPortal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StudentPortal.xaml.cs">
+      <DependentUpon>StudentPortal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManager.xaml.cs">
+      <DependentUpon>UserManager.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\AddTeacher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CourseManager.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChatManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,10 +113,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AddStudent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TeacherPortal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\StudentPortal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -100,5 +166,6 @@
       <Name>ClassLibrary1</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

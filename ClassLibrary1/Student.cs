@@ -10,11 +10,10 @@ namespace ClassLibrary1
     {
         public int Year;
         public string Faculty;
-        public List<Course> Courses;
 
-        public Student(string name, string username, string password) : base(name, username, password)
+        public Student(string name, string username, string password, string faculty) : base(name, username, password)
         {
-            Courses = new List<Course>();
+            Faculty = faculty;
         }
     }
 }

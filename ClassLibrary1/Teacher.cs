@@ -8,11 +8,9 @@ namespace ClassLibrary1
 {
     public class Teacher : User
     {
-        public List<Course> Courses;
 
         public Teacher(string name, string username, string password) : base(name, username, password)
         {
-            Courses = new List<Course>();
         }
     }
 }

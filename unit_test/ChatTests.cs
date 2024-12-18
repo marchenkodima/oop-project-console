@@ -8,15 +8,15 @@ namespace unit_test
         [TestMethod]
         public void ChatGetsCreated()
         {
-            new Chat();
+            new Chat("chat 1");
         }
 
         [TestMethod]
         public void CanSendMessage()
         {
-            Student student = new Student("Student Name", "username1", "password");
+            Student student = new Student("Student Name", "username1", "password", "fac1");
             Teacher teacher = new Teacher("Teacher Name", "username2", "password");
-            Chat chat = new Chat();
+            Chat chat = new Chat("chat 1");
             chat.SendMessage(new TextChatMessage(student.Id, "Hello"));
             chat.SendMessage(new TextChatMessage(teacher.Id, "Hi"));
         }
@@ -24,9 +24,9 @@ namespace unit_test
         [TestMethod]
         public void GetMessages()
         {
-            Student student = new Student("Student Name", "username1", "password");
+            Student student = new Student("Student Name", "username1", "password", "fac1");
             Teacher teacher = new Teacher("Teacher Name", "username2", "password");
-            Chat chat = new Chat();
+            Chat chat = new Chat("chat 1");
             chat.SendMessage(new TextChatMessage(student.Id, "Hello"));
             chat.SendMessage(new TextChatMessage(teacher.Id, "Hi"));
             List<ChatMessage> messages = chat.GetMessages();
@@ -36,9 +36,9 @@ namespace unit_test
         [TestMethod]
         public void DeleteMessages()
         {
-            Student student = new Student("Student Name", "username1", "password");
+            Student student = new Student("Student Name", "username1", "password", "fac1");
             Teacher teacher = new Teacher("Teacher Name", "username2", "password");
-            Chat chat = new Chat();
+            Chat chat = new Chat("chat 1");
             chat.SendMessage(new TextChatMessage(student.Id, "Hello"));
             chat.SendMessage(new TextChatMessage(teacher.Id, "Hi"));
 

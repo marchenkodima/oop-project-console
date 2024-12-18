@@ -8,19 +8,19 @@ namespace unit_test
         [TestMethod]
         public void TeacherGetsCreated()
         {
-            Assert.ThrowsException<NotImplementedException>(() => new Teacher("John Doe", "johndoe", "password"));
+            new Teacher("John Doe", "johndoe", "password");
         }
 
         [TestMethod]
         public void StudentGetsCreated()
         {
-            new Student("John Doe", "johndoe", "password");
+            new Student("John Doe", "johndoe", "password", "fac1");
         }
 
         [TestMethod]
         public void UserCanSignInWithRightCredentials()
         {
-            Student student = new Student("Student Name", "username1", "password");
+            Student student = new Student("Student Name", "username1", "password", "fac1");
             Assert.AreEqual(true, student.SignIn("username1", "password"));
             Teacher teacher = new Teacher("Teacher Name", "username2", "password");
             Assert.AreEqual(true, teacher.SignIn("username2", "password"));
@@ -29,7 +29,7 @@ namespace unit_test
         [TestMethod]
         public void UserCantSignInWithWrongCredentials()
         {
-            Student student = new Student("Student Name", "username1", "password");
+            Student student = new Student("Student Name", "username1", "password", "fac1");
             Assert.AreEqual(false, student.SignIn("username1", "password123"));
             Teacher teacher = new Teacher("Teacher Name", "username2", "password");
             Assert.AreEqual(false, teacher.SignIn("username3", "password"));
@@ -38,9 +38,9 @@ namespace unit_test
         [TestMethod]
         public void UserCanAddChat()
         {
-            Student student = new Student("Student Name", "username1", "password");
+            Student student = new Student("Student Name", "username1", "password", "fac1");
             Teacher teacher = new Teacher("Teacher Name", "username2", "password");
-            Chat chat = new Chat();
+            Chat chat = new Chat("chat 1");
             student.AddChat(chat);
             teacher.AddChat(chat);
         }

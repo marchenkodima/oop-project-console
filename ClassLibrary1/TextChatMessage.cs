@@ -8,7 +8,7 @@ namespace ClassLibrary1
 {
     public class TextChatMessage : ChatMessage
     {
-        public string message;
+        public string Message { get; set; }
         private DateTime timestamp;
         public override DateTime Timestamp
         {
@@ -18,13 +18,13 @@ namespace ClassLibrary1
 
         public TextChatMessage(string senderId, string message) : base(senderId)
         {
-            this.message = message;
+            this.Message = message;
             this.timestamp = DateTime.Now;
         }
 
         public override string Serialize()
         {
-            return $"{Timestamp}: {SenderId} - {message}";
+            return $"{Timestamp}: {SenderId} - {Message}";
         }
 
         public override int GetSize()

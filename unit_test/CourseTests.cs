@@ -22,7 +22,7 @@ namespace unit_test
         public void CanSubmitTask()
         {
             Course course = new Course("course1");
-            Student student = new Student("Student Name", "username1", "password");
+            Student student = new Student("Student Name", "username1", "password", "fac1");
             course.SubmitTask("task1", student);
         }
 

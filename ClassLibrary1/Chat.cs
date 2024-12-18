@@ -1,18 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class Chat
+    public class Chat : INotifyPropertyChanged
     {
-        private List<ChatMessage> Messages;
+        public string Name { get; set; }
 
-        public Chat()
+        private ObservableCollection<ChatMessage> _messages;
+        public ObservableCollection<ChatMessage> Messages
         {
-            Messages = new List<ChatMessage>();
+            get => _messages;
+            set
+            {
+                if (_messages != value)
+                {
+                    _messages = value;
+                    OnPropertyChanged(nameof(_messages));
+                }
+            }
+        }
+
+        public Chat(string name)
+        {
+            Messages = new ObservableCollection<ChatMessage>();
+            Name = name;
         }
 
         public void SendMessage(ChatMessage message)
@@ -25,9 +42,15 @@ namespace ClassLibrary1
             Messages.Remove(message);
         }
 
-        public List<ChatMessage> GetMessages()
+        public ObservableCollection<ChatMessage> GetMessages()
         {
             return Messages;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

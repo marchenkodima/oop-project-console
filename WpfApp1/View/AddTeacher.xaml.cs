@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,17 +13,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.ViewModel;
 
-namespace WpfApp1
+namespace WpfApp1.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddTeacher.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddTeacher : UserControl
     {
-        public MainWindow()
+        public AddTeacher()
         {
             InitializeComponent();
+            DataContext = App.ServiceProvider.GetRequiredService<AddTeacherViewModel>();
         }
     }
 }

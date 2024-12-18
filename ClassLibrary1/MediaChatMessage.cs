@@ -10,6 +10,16 @@ namespace ClassLibrary1
     {
         public byte[] payload;
         private DateTime timestamp;
+        public string Message {
+            get
+            {
+                return Convert.ToBase64String(payload);
+            }
+            set
+            {
+                payload = Convert.FromBase64String(value);
+            }
+        }
 
         public override DateTime Timestamp
         {
